@@ -57,8 +57,6 @@ class Cycling extends Workout {
   }
 }
 
-// const run1 = new Running([52, 21], 10, 60, 180);
-// const cycling1 = new Cycling([53, 21], 30, 60, 530);
 
 //APP ARCHITECTURE
 const form = document.querySelector('.form');
@@ -70,7 +68,7 @@ const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
 
 class App {
-  //Private class fields, prywatne właściwości instancji - właściwości wszystkich instancji stworznych przez tą klasę
+  //Private class fields
   #map;
   #mapZoomLevel = 13;
   #mapEvent;
@@ -155,10 +153,6 @@ class App {
     if (type === 'running') {
       const cadence = +inputCadence.value;
       if (
-        // !Number.isFinite(distance) ||
-        // !Number.isFinite(duration) ||
-        // !Number.isFinite(cadence)
-        //Jeśli wszystkie wartości inputów są liczbami
         !validInputs(distance, duration, cadence) ||
         !allPositive(distance, duration, cadence)
       )
@@ -275,8 +269,6 @@ class App {
         duration: 1,
       },
     });
-
-    // workout.click();
   }
 
   _setLocalStorage() {
